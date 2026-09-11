@@ -54,6 +54,19 @@ same input file.
 Experiments were run on 9 clips reassembled losslessly (H.264 CRF 0, 25 fps) from frame sequences in the [VisDrone2019-VID](https://github.com/VisDrone/VisDrone-Dataset) training set (see the dataset's own license). 
 A download link to the reassembled clips is available on request for review purposes.
 
+A second, own-captured dataset (4K, ~60 fps ground-facing footage over
+carpet/grass/linoleum surfaces at three traversal speeds, 9 clips total)
+was also used to stress-test the pipeline on very different content
+(near-uniform texture, high resolution, high frame rate). Only one clip
+(`CarpetFast2`) has been fully processed so far -- see
+[`results/05_surface_materials_partial_CarpetFast2.csv`](results/05_surface_materials_partial_CarpetFast2.csv).
+**This is exploratory and incomplete**: it predates the `BIAS_QP` tuning
+(uses the original zero-mean method) and its quality score was measured
+non-foveated (before the foveated-evaluation methodology was adopted),
+so it is **not directly comparable** to the main results above. The
+remaining 8 clips are not yet processed. Source videos available on
+request.
+
 ## Results summary
 
 **Baseline (H.265/HEVC, CRF 25) vs. Proposed method (tuned), 9 clips:**

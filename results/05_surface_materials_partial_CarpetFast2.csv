@@ -1,0 +1,5 @@
+clip,method,CRF,bitrate_Mbps,psnr_dB,JOD_non_foveated,note
+CarpetFast2,vertical_rotate_plain,25,34.03,40.81,9.5505,always rotates clockwise; plain HEVC, no ROI
+CarpetFast2,vertical_rotate_plain,51,0.39,26.80,3.8979,always rotates clockwise; plain HEVC, no ROI
+CarpetFast2,orientation_adaptive_pretuning,25,24.2761,40.818,,decision=KEEP (D=0.0295); ORIGINAL pre-tuning script (DELTA_QP=3.0 BETA=0.5, no BIAS_QP)
+CarpetFast2,orientation_adaptive_pretuning,51,0.3102,26.908,,decision=KEEP (D=0.0295); ORIGINAL pre-tuning script (DELTA_QP=3.0 BETA=0.5, no BIAS_QP)
