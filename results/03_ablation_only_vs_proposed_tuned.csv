@@ -1,0 +1,6 @@
+clip,decision,only_bitrate_Mbps,only_psnr_dB,proposed_bitrate_Mbps,proposed_psnr_dB,delta_bitrate_pct,delta_psnr_dB
+clip6,ROTATE,11.4084,34.294,8.4640,32.915,-25.80,-1.379
+clip2,KEEP,2.6353,40.207,2.0536,39.455,-22.08,-0.752
+clip3,KEEP,4.1123,39.493,2.7383,38.727,-33.40,-0.766
+clip4,KEEP,3.212,38.613,2.5371,37.576,-21.01,-1.037
+clip5,KEEP,14.085,37.902,11.1355,37.301,-20.94,-0.601

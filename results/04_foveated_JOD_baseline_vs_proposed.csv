@@ -1,0 +1,10 @@
+clip,decision,baseline_JOD_foveated,proposed_JOD_foveated,delta_JOD,delta_bitrate_pct
+clip1,ROTATE,9.8643,9.8406,-0.0237,-29.35
+clip2,KEEP,9.8584,9.8283,-0.0301,-22.21
+clip3,KEEP,9.8947,9.8754,-0.0193,-33.40
+clip4,KEEP,9.8137,9.7898,-0.0239,-20.96
+clip5,KEEP,9.8848,9.8722,-0.0126,-20.91
+clip6,ROTATE,9.8631,9.8455,-0.0176,-25.83
+clip7,ROTATE,9.8761,9.8507,-0.0254,-27.92
+clip8,ROTATE,9.8620,9.8199,-0.0421,-36.27
+clip9,ROTATE,9.8654,9.8383,-0.0271,-31.13
