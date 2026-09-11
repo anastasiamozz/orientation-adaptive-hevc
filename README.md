@@ -9,7 +9,7 @@ This repository accompanies a conference submission on an orientation-
 adaptive, perceptually-weighted H.265/HEVC coding pipeline for UAV
 (drone) video. The method:
 
-1. Chooses a coding orientation (rotate 90 deg or keep as-is) per clip
+1. Chooses a coding orientation per clip
    based on the dominant direction of the motion field, using an
    **exact, lossless pixel-coordinate rotation** (not an interpolating
    warp) so the choice carries no resampling penalty of its own.
@@ -71,11 +71,8 @@ same input file.
 
 ## Data
 
-Experiments were run on 9 clips reassembled losslessly (H.264 CRF 0,
-25 fps) from frame sequences in the [VisDrone2019-VID](https://github.com/VisDrone/VisDrone-Dataset)
-training set (not redistributed here -- see the dataset's own license).
-The reassembled clips and/or the intermediate experiment outputs can be
-made available on request for review purposes -- contact the author.
+Experiments were run on 9 clips reassembled losslessly (H.264 CRF 0, 25 fps) from frame sequences in the [VisDrone2019-VID](https://github.com/VisDrone/VisDrone-Dataset) training set (see the dataset's own license). 
+A download link to the reassembled clips is available on request for review purposes.
 
 ## Results summary
 
@@ -105,5 +102,5 @@ visual sensitivity at all. See `docs/METHOD.md` for a worked example.
 
 ## Citation
 
-If you build on the ideas in this repository, please contact the author
-for permission and citation details (see [`LICENSE`](LICENSE)).
+If you use this code or these results, please cite this repository until the associated paper is published:
+> A. Mozhaeva, "Orientation-Adaptive Perceptual HEVC Coding for UAV Video," GitHub repository, 2026. https://github.com/anastasiamozz/orientation-adaptive-hevc
