@@ -28,26 +28,6 @@ alongside the conference submission. See [`LICENSE`](LICENSE) --
 **all rights are reserved by the author**; no reuse, modification, or
 redistribution rights are granted beyond the review process itself.
 
-## Repository layout
-
-```
-src/
-  orientation_adaptive_h265.py       Proposed method (current, tuned)
-  orientation_adaptive_h265_original.py   Pre-tuning version (relative pattern only, no BIAS_QP)
-  orientation_only_h265.py           Ablation: orientation adaptation only, no ROI/zones
-  horizontal_baseline.py             Plain H.265/HEVC baseline (no rotation, no ROI)
-  vertical_crf_psnr_experiment.py    Simple rotate+CRF+PSNR experiment (no adaptive logic)
-results/
-  01_ablation_orientation_only_vs_full_original.csv   Pre-tuning: isolates the ORIGINAL
-                                                       (zero-mean) spatial component's effect
-  02_baseline_vs_proposed_tuned.csv                   H.265/HEVC baseline vs. proposed
-                                                       (tuned, BIAS_QP) method
-  03_ablation_only_vs_proposed_tuned.csv              Orientation-only vs. proposed (tuned):
-                                                       isolates the tuned spatial component
-  04_foveated_JOD_baseline_vs_proposed.csv            FovVideoVDP (--foveated) quality scores
-docs/
-  METHOD.md                          Formulas and parameter table
-```
 
 ## Requirements
 
