@@ -23,7 +23,7 @@ This repository accompanies a conference submission on an orientation-adaptive, 
 Full derivation and formulas: [`docs/METHOD.md`](docs/METHOD.md).
 
 **Note on scope:** this repository is provided for peer-review purposes
-alongside the conference submission. See [`LICENSE`](LICENSE) --
+alongside the conference submission. See [`LICENSE`](LICENSE) 
 **all rights are reserved by the author**; no reuse, modification, or
 redistribution rights are granted beyond the review process itself.
 
@@ -33,7 +33,7 @@ redistribution rights are granted beyond the review process itself.
 - `ffmpeg` / `ffprobe` with `libx265` and the `addroi` filter compiled in
 - Python 3.10+, `pip install av numpy`
 - For quality evaluation: `pip install pyfvvdp` + PyTorch (GPU strongly
-  recommended); `fvvdp` CLI run with `--ffmpeg-cc --foveated`
+  recommended); `fvvdp` CLI run with `ffmpeg-cc foveated`
 
 ## Usage
 
@@ -50,9 +50,9 @@ same input file.
 
 ## Data
 A dataset (4K, ~60 fps ground-facing footage over
-carpet/grass/linoleum surfaces at three traversal speeds, 9 clips total) was used to test the algorithm's dependency on the direction of motion propagation, comparing horizontal vs. vertical H.265 coding at CRF 25 and 51 -- see
+carpet/grass/linoleum surfaces at three traversal speeds, 9 clips total) was used to test the algorithm's dependency on the direction of motion propagation, comparing horizontal vs. vertical H.265 coding at CRF 25 and 51, see
 [`results/05_surface_materials_.csv`](results/05_surface_materials_.csv).
-Source videos are not included here (~36 GB) -- available on request. Contact the author (anast.mozhaeva@gmail.com) for a download link.
+Source videos are not included here (~36 GB) available on request. Contact the author (anast.mozhaeva@gmail.com) for a download link.
 
 Experiments were run on 9 clips reassembled losslessly (H.264 CRF 0, 25 fps) from frame sequences in the [VisDrone2019-VID](https://github.com/VisDrone/VisDrone-Dataset) training set (see the dataset's own license). 
 A download link to the reassembled clips is available on request for review purposes.
@@ -70,7 +70,7 @@ request.
 
 Average bitrate reduction across all 9 clips: **27.6%** (range 20.9-36.3%),
 at an average foveated-JOD cost of **0.025** (range 0.013-0.042, on a
-0-10 scale) -- see
+0-10 scale), see 
 [`results/02_baseline_vs_proposed_tuned.csv`](results/02_baseline_vs_proposed_tuned.csv)
 and [`results/04_foveated_JOD_baseline_vs_proposed.csv`](results/04_foveated_JOD_baseline_vs_proposed.csv)
 for the full per-clip breakdown.
@@ -79,9 +79,7 @@ for the full per-clip breakdown.
 **Measurement note:** PSNR is a pure MSE-based metric and cannot reflect
 the benefit of perceptually-targeted bit allocation (it is blind to
 *where* distortion is spent). Quality is therefore reported using
-FovVideoVDP in `--foveated` mode; non-foveated FovVideoVDP substantially
-under-credits the method since it does not model eccentricity-dependent
-visual sensitivity at all. See `docs/METHOD.md` for a worked example.
+FovVideoVDP in `foveated` mode.
 
 ## Citation
 
