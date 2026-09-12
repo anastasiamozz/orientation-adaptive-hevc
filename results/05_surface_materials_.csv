@@ -1,0 +1,19 @@
+Sequence,CRF,Horizontal_H265_PSNR_dB,Horizontal_H265_Bitrate_Mbps,Vertical_H265_PSNR_dB,Vertical_H265_Bitrate_Mbps
+Grass Fast,25,31.93,87.10,34.46,125.83
+Grass Medium,25,31.66,162.22,31.66,197.12
+Grass Slow,25,33.08,127.02,32.78,141.94
+Grass Fast,51,19.56,1.72,16.34,3.15
+Grass Medium,51,16.22,1.58,16.34,4.37
+Grass Slow,51,16.98,1.28,17.12,2.96
+Carpet Fast,25,40.60,26.22,40.58,36.75
+Carpet Medium,25,40.37,23.06,40.37,31.09
+Carpet Slow,25,39.93,25.51,39.90,34.15
+Carpet Fast,51,26.57,0.33,27.29,0.41
+Carpet Medium,51,25.02,0.27,24.85,0.36
+Carpet Slow,51,24.51,0.26,24.29,0.37
+Linoleum Fast,25,43.78,10.72,43.60,14.59
+Linoleum Medium,25,42.54,13.04,42.44,17.39
+Linoleum Slow,25,42.42,14.18,34.14,20.12
+Linoleum Fast,51,34.13,0.16,34.14,0.18
+Linoleum Medium,51,30.79,0.16,30.79,0.18
+Linoleum Slow,51,31.58,0.16,30.79,0.18
