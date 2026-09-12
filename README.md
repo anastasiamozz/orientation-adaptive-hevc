@@ -5,8 +5,7 @@
 
 ## Overview
 
-This repository accompanies a conference submission on an orientation-
-adaptive, perceptually-weighted H.265/HEVC coding pipeline for UAV
+This repository accompanies a conference submission on an orientation-adaptive, perceptually-weighted H.265/HEVC coding pipeline for UAV
 (drone) video. The method:
 
 1. Chooses a coding orientation per clip
