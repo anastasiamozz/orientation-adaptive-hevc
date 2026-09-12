@@ -16,8 +16,8 @@ This repository accompanies a conference submission on an orientation-adaptive, 
    coding axis.
 3. Applies a region-of-interest QP pattern combining (a) a relative,
    zero-mean redistribution term that decides *where* quality is spent,
-   and (b) a genuine, non-zero-mean bias term (`BIAS_QP`) -- distributed
-   inversely by a combined motion+eccentricity importance score -- that
+   and (b) a genuine, non-zero-mean bias term (`BIAS_QP`), distributed
+   inversely by a combined motion+eccentricity importance score, which
    is what actually reduces net bitrate.
 
 Full derivation and formulas: [`docs/METHOD.md`](docs/METHOD.md).
