@@ -78,13 +78,6 @@ at an average foveated-JOD cost of **0.025** (range 0.013-0.042, on a
 and [`results/04_foveated_JOD_baseline_vs_proposed.csv`](results/04_foveated_JOD_baseline_vs_proposed.csv)
 for the full per-clip breakdown.
 
-**Ablation -- isolating the spatial component from orientation adaptation:**
-since `orientation_only_h265.py` and `orientation_adaptive_h265.py` make
-the identical rotate/keep decision, the difference between them isolates
-the spatial (ROI) component alone. Orientation adaptation by itself
-contributes only ~0-6% bitrate change (and not consistently); the tuned
-spatial component contributes the dominant ~20-36% share -- see
-[`results/03_ablation_only_vs_proposed_tuned.csv`](results/03_ablation_only_vs_proposed_tuned.csv).
 
 **Measurement note:** PSNR is a pure MSE-based metric and cannot reflect
 the benefit of perceptually-targeted bit allocation (it is blind to
