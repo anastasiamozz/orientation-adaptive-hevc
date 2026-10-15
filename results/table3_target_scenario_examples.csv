@@ -1,0 +1,11 @@
+dataset,sequence,coding_orientation,bitrate_reduction_crf25_pct,bd_rate_pct
+VisDrone,uav0000288_00001,rotated,34.7,-14.78
+VisDrone,uav0000352_05980,rotated,33.6,-14.36
+VisDrone,uav0000360_00001,rotated,38.7,-14.50
+VisDrone,uav0000329_04715,kept,42.5,-12.48
+VisDrone,uav0000361_02323,kept,37.9,-11.68
+UAVDT,M0203,rotated,31.1,-10.41
+VisDrone,uav0000076_00720,rotated,35.6,-9.62
+VisDrone,uav0000072_06432,rotated,37.3,-8.46
+VisDrone,uav0000278_00001,kept,34.9,-9.32
+UAVDT,M0604,rotated,22.7,-8.16

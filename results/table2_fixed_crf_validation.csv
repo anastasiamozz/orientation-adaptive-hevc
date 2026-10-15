@@ -1,0 +1,4 @@
+dataset,sequences,bitrate_reduction_crf25_pct,jod_loss
+VisDrone-VID2019,32,27.1,0.026
+UAVDT,24,26.9,0.049
+Overall,56,27.0,0.036

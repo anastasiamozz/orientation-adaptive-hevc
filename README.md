@@ -49,39 +49,52 @@ For a fair baseline-vs-proposed comparison, keep `CRF` identical between
 same input file.
 
 ## Data
-A dataset (4K, ~60 fps ground-facing footage over
-carpet/grass/linoleum surfaces at three traversal speeds, 9 clips total) was used to test the algorithm's dependency on the direction of motion propagation, comparing horizontal vs. vertical H.265 coding at CRF 25 and 51, see
-[`results/05_surface_materials_.csv`](results/05_surface_materials_.csv).
-Source videos are not included here (~36 GB) available on request. Contact the author (anast.mozhaeva@gmail.com) for a download link.
 
-Experiments were run on 9 clips reassembled losslessly (H.264 CRF 0, 25 fps) from frame sequences in the [VisDrone2019-VID](https://github.com/VisDrone/VisDrone-Dataset) training set (see the dataset's own license). 
-A download link to the reassembled clips is available on request for review purposes.
+**Controlled 4K UAV dataset** (introduced in the paper): 24 sequences recorded with a DJI Air 3S
+camera (3840x2160, 60 fps, nadir orientation) at low, medium and high flight speeds over grass,
+carpet and linoleum surfaces. Used to compare horizontal and vertical H.265/HEVC coding at CRF 25
+and 51. Available upon request for research and educational purposes; contact the author
+(anast.mozhaeva@gmail.com).
 
-**This is exploratory and incomplete**: it predates the `BIAS_QP` tuning
-(uses the original zero-mean method) and its quality score was measured
-non-foveated (before the foveated-evaluation methodology was adopted),
-so it is **not directly comparable** to the main results above. The
-remaining 8 clips are not yet processed. Source videos available on
-request.
+**Independent validation datasets:** 32 sequences from
+[VisDrone-VID2019](https://github.com/VisDrone/VisDrone-Dataset) and 24 sequences from UAVDT
+(56 sequences in total; nadir, oblique and lateral views). For the additional validation sequences
+the first 150 frames were evaluated. See each dataset's own license.
 
-## Results summary
+## Evaluation protocol
 
-**Baseline (H.265/HEVC, CRF 25) vs. Proposed method (tuned), 9 clips:**
+- Controlled orientation experiments: PSNR and video-only bitrate, identical content and encoder
+  settings for horizontal and vertical coding.
+- Independent validation: conventional full-frame H.265/HEVC vs. the proposed framework at a fixed
+  CRF of 25; rate-distortion additionally assessed at CRF 22, 25, 28 and 31 with BD-rate at matched
+  perceptual quality (FovVideoVDP, PCHIP interpolation).
+- The decoded output of the proposed method is transformed back to the original input orientation
+  before quality assessment; both methods are evaluated against the same original reference video.
+- All configurations use identical x265 settings with native adaptive quantisation (`aq-mode=2`).
 
-Average bitrate reduction across all 9 clips: **27.6%** (range 20.9-36.3%),
-at an average foveated-JOD cost of **0.025** (range 0.013-0.042, on a
-0-10 scale), see 
-[`results/02_baseline_vs_proposed_tuned.csv`](results/02_baseline_vs_proposed_tuned.csv)
-and [`results/04_foveated_JOD_baseline_vs_proposed.csv`](results/04_foveated_JOD_baseline_vs_proposed.csv)
-for the full per-clip breakdown.
+## Results
 
+**Table I** - orientation-dependent H.265/HEVC coding on the controlled dataset, all 18
+experiments at CRF 25 and 51:
+[`results/table1_controlled_orientation.csv`](results/table1_controlled_orientation.csv).
+Vertical coding required higher bitrate than horizontal coding in every configuration; at CRF 25
+the increase ranged from 9% to 40% with PSNR differences not exceeding 0.35 dB.
 
-**Measurement note:** PSNR is a pure MSE-based metric and cannot reflect
-the benefit of perceptually-targeted bit allocation (it is blind to
-*where* distortion is spent). Quality is therefore reported using
-FovVideoVDP in `foveated` mode.
+**Table II** - fixed-CRF evaluation on the independent datasets (CRF 25, relative to conventional
+H.265/HEVC): [`results/table2_fixed_crf_validation.csv`](results/table2_fixed_crf_validation.csv).
+
+| Dataset | Sequences | Bitrate reduction | JOD loss |
+|---|---|---|---|
+| VisDrone-VID2019 | 32 | 27.1% | 0.026 |
+| UAVDT | 24 | 26.9% | 0.049 |
+| Overall | 56 | 27.0% | 0.036 |
+
+**Table III** - target scenario (forward UAV flight with an oblique camera): bitrate reduction at
+CRF 25 and perceptual BD-rate for ten sequences:
+[`results/table3_target_scenario_examples.csv`](results/table3_target_scenario_examples.csv).
+Bitrate reductions range from 22.7% to 42.5%.
 
 ## Citation
 
-If you use this code or these results, please cite this repository until the associated paper is published:
-> A. Mozhaeva, "Orientation-Adaptive Perceptual HEVC Coding for UAV Video," GitHub repository, 2026. https://github.com/anastasiamozz/orientation-adaptive-hevc
+If you use this code or these results, please cite:
+> A. Mozhaeva, V. Vinetsky, V. Fedorov, K. A. Chisholm, and P. Delmas, "Motion- and Perception-Adaptive Video Compression for Real-Time UAV Piloting," International Conference on Image and Vision Computing New Zealand (IVCNZ), 2026.

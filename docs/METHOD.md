@@ -7,21 +7,22 @@ H.264 analysis pass. The horizontal and vertical motion **energy**
 (mean squared component) are compared:
 
 - if vertical energy > horizontal energy: the dominant motion runs along
-  the frame's current SHORT axis -> rotate 90 deg for coding (puts that
-  motion along the new LONG axis, which motion estimation handles more
-  efficiently);
+  the frame's current SHORT axis -> rotate 90 deg clockwise for coding;
 - otherwise: keep the original orientation.
+
+The coding orientation is selected once per sequence. No threshold or
+hysteresis is applied; equal energies result in no rotation.
 
 The rotation is an **exact pixel-coordinate transpose** (`ffmpeg
 transpose`), not an interpolating affine warp -- it is a pure coordinate
 permutation, verified bit-exact on round-trip (>360 dB), so it introduces
-no resampling penalty of its own. After decoding, the inverse transpose
-(if any) restores the target display orientation.
+no resampling penalty of its own. The inverse transformation restores the
+original orientation after decoding.
 
 ## 2. Geometry + motion + perceptual adaptive zones
 
 On the coding-orientation reference, a second motion-vector pass drives
-construction of 5-16 adaptive zones along the coding axis:
+construction of 8-16 adaptive zones along the coding axis:
 
 - a **motion profile**: mean motion magnitude per spatial bin, smoothed;
 - a **geometry profile**: `1/cos^2(phi)` where `phi` is the angular
